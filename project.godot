@@ -1,0 +1,66 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Reference",
+"class": "ClydeDialogue",
+"language": "GDScript",
+"path": "res://addons/clyde/ClydeDialogue.gd"
+}, {
+"base": "Resource",
+"class": "GameSave",
+"language": "GDScript",
+"path": "res://Assets/Resources/GameSaveRes.gd"
+} ]
+_global_script_class_icons={
+"ClydeDialogue": "",
+"GameSave": ""
+}
+
+[application]
+
+config/name="ProjectBase"
+config/description="Base structure for new projects"
+config/icon="res://icon.png"
+
+[autoload]
+
+Types="*res://Assets/Managers/Types.gd"
+SignalBus="*res://Assets/Managers/SignalBus.gd"
+GameManager="*res://Assets/Managers/GameManager.gd"
+
+[display]
+
+window/size/width=1920
+window/size/height=1080
+window/size/fullscreen=true
+window/stretch/mode="2d"
+window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/clyde/plugin.cfg", "res://addons/smoothing/plugin.cfg" )
+
+[layer_names]
+
+3d_physics/layer_1="world"
+3d_physics/layer_2="player"
+3d_physics/layer_3="activatables"
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_clear_color=Color( 0.364706, 0.364706, 0.364706, 1 )
+quality/filters/use_fxaa=true
+quality/filters/use_debanding=true
+environment/default_environment="res://default_env.tres"

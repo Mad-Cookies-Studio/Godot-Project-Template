@@ -1,0 +1,86 @@
+YOU: huh, This doesn't look like the Danube.
+THE OCEAN: I am the voice of the ocean.
+YOU: You're what?!
+THE OCEAN: The voice of the ocean.
+YOU: Why?
+THE OCEAN: It needed one.
+YOU: Makes sense.
+THE OCEAN: Am I telling the truth?
+  +[Yes]
+    -> yes_data
+  +[No]
+    -> no_data
+
+THE OCEAN: Help me and you'll have made a long lasting friend in me
+YOU: What do you need?
+THE OCEAN: Fish out the garbage, I've marked the spots for you.
+THE OCEAN: The shop near you accepts the items,
+THE OCEAN: the owner has long agreed to help me too.
+THE OCEAN: Oh, they might be able to upgrade your ship.
+YOU: Interesting! Thank you, I'll see what I can do.
+THE OCEAN: One more thing,
+YOU: Yes?
+THE OCEAN: As you sail aroun these parts, you will find altars
+THE OCEAN: They may prove helpful in answering questions and clearing things up about yourself.
+THE OCEAN: Anything you'd like to ask before you go?
+  +[What happened to the world?]
+    -> what_happened_data <-
+  +[Why me?]
+    -> why_me_data <-
+  +[Where am I?]
+    -> where_am_i_data <-
+  +[No thanks]
+    -> no_end_data
+
+== yes_data
+YOU: Of course, it feels like I've known you for eternity.
+THE OCEAN: Haha, I like you. You're in touch with the world.
+THE OCEAN: It's funny how more and more of you are so.
+<-
+
+== no_data
+YOU: No, but then again weirder things had happened to me.
+YOU: So let's put it this way,
+YOU: whether or not you are the ocean, I greet you regardless
+YOU: and time will tell
+THE OCEAN: Words of a true child of the Earth.
+THE OCEAN: You've lightened my mood, thank you.
+YOU: I guess that's all we can wish for.
+<-
+
+== what_happened_data
+THE OCEAN: Many years ago, your kind had destroyed this beautiful planet.
+THE OCEAN: Once they started dying due to the enviorenmemtal issues,
+THE OCEAN: the RESTART commenced. It's still undergoing you know.
+YOU: So that's why there's so few people left.
+THE OCEAN: Indeed. It works out like this everytime, the few that survive remember why they should respect the world.
+YOU: But what if this era is forgotten about in the future?
+THE OCEAN: It always is, happens everytime friend.
+YOU: I see.
+THE OCEAN: Don't be down, it's the way things go and move naturally.
+THE OCEAN: Sure, the technology is different everytime, languages vary but in the end, a human is a human is a human.
+YOU: What can I do?
+THE OCEAN: Live. Don't worry about the rest, that happens by itself.
+THE OCEAN: Perhaps this was the last RESTART the Earth's ever had!
+THE OCEAN: However it doesn't matter at all.
+<-
+
+== why_me_data
+THE OCEAN: It's simple, friend.
+THE OCEAN: You happened to be at the right spot at the right time.
+THE OCEAN: I have a knack for seeing the lone wolfs of the sea, who are ready to hear my voice.
+YOU: Since we're speaking now, what you say makes sense.
+THE OCEAN: Haha
+<-
+
+== where_am_i_data
+THE OCEAN: In the middle of a massive amount of water.
+THE OCEAN: Lots and lots of it.
+YOU: Yeah but specifically? I was on the Danube a moment ago.
+THE OCEAN: Perhaps, space is so easily misunderstood. One thing leads to another right?
+THE OCEAN: What if multiple paths could take you to the same spot, although each of the starting points where unavailable to one another?
+THE OCEAN: Where you find yourself is a space like that. It connects all the dots, all the places, all the times that I have ever been in.
+<-
+
+== no_end_data
+THE OCEAN: Godspeed, come talk to me anytime.

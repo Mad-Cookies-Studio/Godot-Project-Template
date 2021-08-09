@@ -1,0 +1,3 @@
+extends Node
+
+# Global ENUMS
