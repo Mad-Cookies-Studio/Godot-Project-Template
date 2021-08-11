@@ -10,6 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Reference",
+"class": "ArrayUtils",
+"language": "GDScript",
+"path": "res://addons/SIsilicon.3d.text/array_utils.gd"
+}, {
+"base": "Reference",
 "class": "ClydeDialogue",
 "language": "GDScript",
 "path": "res://addons/clyde/ClydeDialogue.gd"
@@ -20,6 +25,7 @@ _global_script_classes=[ {
 "path": "res://Assets/Resources/GameSaveRes.gd"
 } ]
 _global_script_class_icons={
+"ArrayUtils": "",
 "ClydeDialogue": "",
 "GameSave": ""
 }
@@ -46,7 +52,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/clyde/plugin.cfg", "res://addons/smoothing/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/SIsilicon.3d.text/plugin.cfg", "res://addons/clyde/plugin.cfg", "res://addons/smoothing/plugin.cfg" )
 
 [layer_names]
 
