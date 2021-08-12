@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/PlayerCamera/PlayerCameraNode.gd" type="Script" id=1]
+[ext_resource path="res://addons/smoothing/smoothing.gd" type="Script" id=2]
+
+[node name="PlayerCameraNode" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.10182, 0 )
+script = ExtResource( 1 )
+lerp_speed = 4.0
+
+[node name="PivotY" type="Spatial" parent="."]
+
+[node name="PivotX" type="Spatial" parent="PivotY"]
+
+[node name="ClippedCamera" type="ClippedCamera" parent="PivotY/PivotX"]
+transform = Transform( 1, 0, 0, 0, 0.99193, 0.126788, 0, -0.126788, 0.99193, 0, 2.63954, 45.9591 )
+fov = 80.0
+far = 10000.0
+margin = 19.4
+collision_mask = 16385
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="SettingsTween" type="Tween" parent="."]
+
+[node name="Smoothing" type="Spatial" parent="."]
+script = ExtResource( 2 )
+target = NodePath("..")
+
+[node name="Smoothing2" type="Spatial" parent="."]
+script = ExtResource( 2 )
+target = NodePath("../PivotY/PivotX/ClippedCamera")

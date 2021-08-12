@@ -54,6 +54,29 @@ window/stretch/aspect="expand"
 
 enabled=PoolStringArray( "res://addons/SIsilicon.3d.text/plugin.cfg", "res://addons/clyde/plugin.cfg", "res://addons/smoothing/plugin.cfg" )
 
+[input]
+
+gp_cam_x_left={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":2,"axis_value":-1.0,"script":null)
+ ]
+}
+gp_cam_x_right={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":2,"axis_value":1.0,"script":null)
+ ]
+}
+gp_cam_y_down={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":3,"axis_value":1.0,"script":null)
+ ]
+}
+gp_cam_y_up={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":3,"axis_value":1.0,"script":null)
+ ]
+}
+
 [layer_names]
 
 3d_physics/layer_1="world"

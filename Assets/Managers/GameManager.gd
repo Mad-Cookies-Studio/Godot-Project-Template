@@ -2,6 +2,9 @@ extends Node
 
 # Game manager. A singleton scripts for managing game states and dependencies
 
+# camera
+var camera_transform : Transform
+
 # save game resource
 const GAME_SAVE_PATH : String = "user://GameSave.tres"
 var game_save : GameSave
