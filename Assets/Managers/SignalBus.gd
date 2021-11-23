@@ -19,3 +19,7 @@ signal settings_save_problem
 # save game
 signal game_saved
 signal game_save_problem
+
+
+# dialogue
+signal start_dialogue(which, pause) # string, bool (pause makes sure the game is paused upon starting the dialogue)
