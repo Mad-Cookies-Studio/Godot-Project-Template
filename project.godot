@@ -23,11 +23,17 @@ _global_script_classes=[ {
 "class": "GameSave",
 "language": "GDScript",
 "path": "res://Assets/Resources/GameSaveRes.gd"
+}, {
+"base": "Resource",
+"class": "GameSettings",
+"language": "GDScript",
+"path": "res://Assets/Resources/GameSettingsRes.gd"
 } ]
 _global_script_class_icons={
 "ArrayUtils": "",
 "ClydeDialogue": "",
-"GameSave": ""
+"GameSave": "",
+"GameSettings": ""
 }
 
 [application]
