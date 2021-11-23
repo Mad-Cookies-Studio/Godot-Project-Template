@@ -47,6 +47,7 @@ config/icon="res://icon.png"
 Types="*res://Assets/Managers/Types.gd"
 SignalBus="*res://Assets/Managers/SignalBus.gd"
 GameManager="*res://Assets/Managers/GameManager.gd"
+AudioManager="*res://Assets/Managers/AudioManager.tscn"
 
 [display]
 
