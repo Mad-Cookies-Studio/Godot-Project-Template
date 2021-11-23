@@ -1,0 +1,13 @@
+[remap]
+
+importer="clyde.dialogue"
+type="PackedDataContainer"
+path="res://.import/variables.clyde-6b97897959c98ac30571480b05bff90c.res"
+
+[deps]
+
+source_file="res://dialogues/variables.clyde"
+dest_files=[ "res://.import/variables.clyde-6b97897959c98ac30571480b05bff90c.res" ]
+
+[params]
+

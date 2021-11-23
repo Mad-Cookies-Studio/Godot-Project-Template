@@ -1,0 +1,13 @@
+[remap]
+
+importer="clyde.dialogue"
+type="PackedDataContainer"
+path="res://.import/blocks.clyde-ab52887104fb99409c89dec4f11337b3.res"
+
+[deps]
+
+source_file="res://dialogues/blocks.clyde"
+dest_files=[ "res://.import/blocks.clyde-ab52887104fb99409c89dec4f11337b3.res" ]
+
+[params]
+

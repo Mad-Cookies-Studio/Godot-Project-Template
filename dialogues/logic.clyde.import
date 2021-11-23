@@ -1,0 +1,13 @@
+[remap]
+
+importer="clyde.dialogue"
+type="PackedDataContainer"
+path="res://.import/logic.clyde-3c654f04cd6f2b32242f1f56ae381014.res"
+
+[deps]
+
+source_file="res://dialogues/logic.clyde"
+dest_files=[ "res://.import/logic.clyde-3c654f04cd6f2b32242f1f56ae381014.res" ]
+
+[params]
+

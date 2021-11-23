@@ -1,0 +1,13 @@
+[remap]
+
+importer="clyde.dialogue"
+type="PackedDataContainer"
+path="res://.import/nesting.clyde-60b460541b138e6915c97530ee62cc1d.res"
+
+[deps]
+
+source_file="res://dialogues/nesting.clyde"
+dest_files=[ "res://.import/nesting.clyde-60b460541b138e6915c97530ee62cc1d.res" ]
+
+[params]
+
