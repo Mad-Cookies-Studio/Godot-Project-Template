@@ -6,8 +6,14 @@ const ROT_LIMIT_MIN : int = -85
 const MIN_ZOOM : float = 0.5
 const MAX_ZOOM : float = 1000.0
 
+const MAX_SMOOTH : float = 35.0
+
 var mouse_speed : Vector2
-var mouse_sensitivity : float = 0.2
+var mouse_sensitivity : float = 0.8
+## 35 is none
+## 12 is default
+## 0 is max
+var mouse_smooth_amount : float = 12.0
 var game_pad_sensitivity : float = 3.0
 var smooth_mouse : Vector2
 
@@ -29,11 +35,31 @@ var smooth_pad : Vector2
 var def_fov : float = 80.0
 var def_distance : float = 45.959
 
+
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	connect_signals()
+	apply_settings()
+	
+	
+func connect_signals() -> void:
 	SignalBus.connect("change_camera_target", self, "on_change_camera_target")
 	SignalBus.connect("revert_camera_target", self, "on_revert_camera_target")
+	SignalBus.connect("set_camera_fov", self, "on_set_camera_fov")
+	SignalBus.connect("add_camera_collision_exception", self, "on_add_camera_collision_exception")
+	SignalBus.connect("clear_camera_collision_excpetions", self, "on_clear_camera_collision_excpetions")
 	SignalBus.connect("change_mouse_sensitivity", self, "on_change_mouse_sensitivity")
+	SignalBus.connect("settings_changed", self, "on_settings_changed")
+	
+	
+func apply_settings() -> void:
+	# fov
+	$PivotY/PivotX/ClippedCamera.fov = GameManager.game_settings.fov
+	def_fov = GameManager.game_save.fov
+	# mouse sensitvity
+	mouse_sensitivity = GameManager.game_save.mouse_sensitivity
+	# mouse smooth
+	mouse_smooth_amount = MAX_SMOOTH - ((GameManager.game_save.mouse_smooth - 0.05) * MAX_SMOOTH)
 
 
 func _input(event: InputEvent) -> void:
@@ -47,6 +73,8 @@ func _process(delta: float) -> void:
 	rotate_cam(delta)
 	
 	GameManager.camera_transform = camera.global_transform
+	GameManager.camera_x_rot = pivot_y.rotation.y
+	GameManager.camera_y_rot = pivot_x.rotation.x
 	
 	
 func _physics_process(delta: float) -> void:
@@ -65,7 +93,7 @@ func get_gamepad_force() -> void:
 
 func interpolate_inputs(delta : float) -> void:
 	smooth_pad = smooth_pad.linear_interpolate(game_pad_force, 4.0 * delta)
-	smooth_mouse = smooth_mouse.linear_interpolate(mouse_speed, 12.0 * delta)
+	smooth_mouse = smooth_mouse.linear_interpolate(mouse_speed, mouse_smooth_amount * delta)
 
 	
 func rotate_cam(delta) -> void:
@@ -103,3 +131,19 @@ func on_revert_camera_target() -> void:
 
 func on_change_mouse_sensitivity(new : float) -> void:
 	mouse_sensitivity = new
+
+
+func on_set_camera_fov(_fov : float) -> void:
+	camera.fov = _fov
+
+
+func on_add_camera_collision_exception(_n : Node) -> void:
+	camera.add_exception(_n)
+
+
+func on_clear_camera_collision_excpetions() -> void:
+	camera.clear_exceptions()
+
+
+func on_settings_changed() -> void:
+	apply_settings()
