@@ -5,12 +5,14 @@ extends Node
 # camera
 var camera_transform : Transform
 
-# save game resource
+# save game and settings resources
 const GAME_SAVE_PATH : String = "user://GameSave.tres"
 const SETTINGS_PATH : String = "user://Settings.tres"
 var game_save : GameSave
 var game_settings : GameSettings
 
+# game state
+var game_state : int = 0
 
 func _ready() -> void:
 	load_save_game()
