@@ -166,6 +166,10 @@ func _on_event_triggered(event_name : String):
 	if event_name.begins_with("signal"):
 		var signal_parts : PoolStringArray = event_name.split(SIGNAL_DELIMITER, false)
 		if signal_parts.size() > 2:
+			# emits a signal from the signal bus
+			# first part is the signal name
+			# secon part is argument
+			# "{trigger signal|signal_name|signal_param}" --- use | (long pipe to seperate calls)
 			SignalBus.emit_signal(signal_parts[1], signal_parts[2])
 		else:
 			SignalBus.emit_signal(signal_parts[1])
