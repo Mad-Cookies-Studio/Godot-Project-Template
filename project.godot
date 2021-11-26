@@ -28,12 +28,18 @@ _global_script_classes=[ {
 "class": "GameSettings",
 "language": "GDScript",
 "path": "res://Assets/Resources/GameSettingsRes.gd"
+}, {
+"base": "Node",
+"class": "Types",
+"language": "GDScript",
+"path": "res://Assets/Managers/Types.gd"
 } ]
 _global_script_class_icons={
 "ArrayUtils": "",
 "ClydeDialogue": "",
 "GameSave": "",
-"GameSettings": ""
+"GameSettings": "",
+"Types": ""
 }
 
 [application]
@@ -44,7 +50,6 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Types="*res://Assets/Managers/Types.gd"
 SignalBus="*res://Assets/Managers/SignalBus.gd"
 GameManager="*res://Assets/Managers/GameManager.gd"
 AudioManager="*res://Assets/Managers/AudioManager.tscn"

@@ -1,5 +1,5 @@
 extends Node
-
+class_name Types
 # Global ENUMS
 
 # where the game is at
