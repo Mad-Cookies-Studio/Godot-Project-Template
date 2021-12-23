@@ -1,0 +1,62 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/UI/SplitContainer/EpicVSplitContainer.gd" type="Script" id=1]
+
+[node name="EpicVSplitContainer" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+grabber_col = Color( 1, 1, 1, 0.211765 )
+grabber_col_highlight = Color( 1, 1, 1, 0.211765 )
+grabber_area_size = 10
+
+[node name="SortingContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Section1" type="Control" parent="SortingContainer"]
+margin_right = 1920.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
+
+[node name="Grabber" type="ColorRect" parent="SortingContainer"]
+margin_top = 50.0
+margin_right = 1920.0
+margin_bottom = 51.0
+rect_min_size = Vector2( 5, 1 )
+mouse_default_cursor_shape = 9
+color = Color( 1, 1, 1, 0.211765 )
+
+[node name="GrabberArea" type="Control" parent="SortingContainer/Grabber"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -0.5
+margin_bottom = 0.5
+grow_vertical = 2
+rect_min_size = Vector2( 0, 10 )
+mouse_default_cursor_shape = 9
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Section2" type="Control" parent="SortingContainer"]
+show_behind_parent = true
+margin_top = 51.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+mouse_filter = 1
+size_flags_vertical = 3
+
+[connection signal="gui_input" from="SortingContainer/Grabber/GrabberArea" to="." method="_on_Control_gui_input"]
+[connection signal="mouse_entered" from="SortingContainer/Grabber/GrabberArea" to="." method="_on_GrabberArea_mouse_entered"]
+[connection signal="mouse_exited" from="SortingContainer/Grabber/GrabberArea" to="." method="_on_GrabberArea_mouse_exited"]
